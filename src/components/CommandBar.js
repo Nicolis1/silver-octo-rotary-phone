@@ -1,15 +1,30 @@
 import '../App.css';
 import 'simple-line-icons';
-export default function CommandBar({}) {
+
+export default function CommandBar({ expanded, setExpanded }) {
 	return (
-		<div className='commandBar'>
-			<div className='searchInput'>
+		<div className={expanded ? 'commandBar expanded' : 'commandBar'}>
+			<div
+				className='searchInput'
+				onFocus={() => {
+					setExpanded(true);
+				}}
+				onBlur={() => {
+					setExpanded(false);
+				}}
+			>
 				<input type='text' placeholder='Search for anything'></input>
+				<button
+					className='actionButton'
+					onClick={() => {
+						setExpanded(!expanded);
+					}}
+				>
+					<span className='icon-grid' />
+					⌘E
+				</button>
 			</div>
-			<button className='actionButton'>
-				<span className='icon-grid' />
-				⌘E
-			</button>
+			{expanded && <div className='content'></div>}
 		</div>
 	);
 }

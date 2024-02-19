@@ -7,20 +7,43 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-color: #EEF0F4;
+}
+
+.commandBar.expanded{
+  position: absolute;
+  height: 80%;
+  width: 70%;
+  top:90px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #F1F5F8;
+  border-radius: 20px;
 }
 .commandBar{
   height:90px;
+  width: 100%;
+  top:0px;
   background-color: #E2E7EE;
   box-sizing: border-box;
   padding:8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all .4s ease-in;
 }
 .searchInput{
   display: flex;
   width: 90%;
-  height: 50%;
+  height: 45px;
+  align-items: center;
+  background-color:#E2E7EE;
+  border-radius: 10px;
 }
 .searchInput input{
   width: 100%;
@@ -28,6 +51,10 @@
   background-color:#E2E7EE;
   border:none;
   font-size:24px;
+}
+.searchInput input:focus{
+  border:none;
+  outline: none;
 }
 .commandBar .actionButton{
   background-color: white;
@@ -39,7 +66,7 @@
   width: fit-content;
   border-radius: 5px;
   border: none;
-  box-shadow: 1px 1px 1px 1px grey;
+  box-shadow: 0px 2px 2px  grey;
   display: flex;
   align-items: center;
 }
@@ -47,7 +74,21 @@
   padding: 8px;
   font-size: 20px;
 }
+.commandBar .content{
+  height: 100%;
+  width: 100%;
+}
+
 .body{
-  background-color: sienna;
+  height: 100%;
+  background-color: #EEF0F4;
+}
+.body.blurred{
+  box-sizing: border-box;
+  padding-top: 90px;
+  filter: blur(4px) brightness(70%);
+}
+.body img{
+  width: 100%;
   height: 100%;
 }
